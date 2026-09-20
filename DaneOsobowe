@@ -1,1 +1,234 @@
- 
+XML:
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+ >
+<LinearLayout
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Moja aplikacja"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:textColor="#00ff00"
+    />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="277dp"
+        android:layout_gravity="center"
+        android:src="@drawable/dane" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:background="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Imię: "
+        android:layout_margin="7dp"
+        android:gravity="right"
+        android:layout_weight="3"
+        />
+
+    <EditText
+        android:id="@+id/imie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:hint="Wprowadź imię"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        android:layout_weight="1"
+        />
+    </LinearLayout>
+    <EditText
+
+        android:id="@+id/nazwisko"
+        android:layout_width="match_parent"
+        android:layout_margin="7dp"
+        android:layout_height="wrap_content"
+        android:hint="Wprowadź nazwisko"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        />
+    <EditText
+        android:id="@+id/wiek"
+        android:layout_width="match_parent"
+        android:layout_margin="7dp"
+        android:layout_height="wrap_content"
+        android:hint="Wprowadź wiek"
+        android:inputType="numberDecimal"
+        android:imeOptions="actionNext"
+        />
+    <EditText
+        android:id="@+id/telefon"
+        android:layout_width="match_parent"
+        android:layout_margin="7dp"
+        android:layout_height="wrap_content"
+        android:hint="Wprowadź telefon"
+        android:inputType="phone"
+        android:imeOptions="actionNext"
+        />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_margin="7dp"
+        android:layout_height="wrap_content"
+        android:hint="Wprowadź email"
+        android:inputType="textEmailAddress"
+        android:imeOptions="actionNext"
+        />
+    <EditText
+        android:id="@+id/haslo"
+        android:layout_width="match_parent"
+        android:layout_margin="7dp"
+        android:layout_height="wrap_content"
+        android:hint="Wprowadź hasło"
+        android:inputType="textPassword"
+        android:imeOptions="actionNext"
+        />
+    <Button
+        android:id="@+id/zatwierdz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zatwierdź"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#00ff00"
+        app:cornerRadius="0dp"
+
+        />
+    <TextView
+        android:id="@+id/podsumowanie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tu pojawi się podsumowanie"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        />
+    <ImageButton
+        android:id="@+id/zus"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/zus"
+
+        />
+
+
+</LinearLayout>
+</ScrollView>
+
+
+Java:
+
+package com.example.trzecia_bis;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class MainActivity extends AppCompatActivity {
+    EditText imie, nazwisko, wiek, telefon, email, haslo;
+    Button zatwierdz;
+    TextView podsumowanie;
+    ImageButton zus;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        imie=findViewById(R.id.imie);
+        nazwisko=findViewById(R.id.nazwisko);
+        wiek=findViewById(R.id.wiek);
+        telefon=findViewById(R.id.telefon);
+        email=findViewById(R.id.email);
+        haslo=findViewById(R.id.haslo);
+        zatwierdz=findViewById(R.id.zatwierdz);
+        podsumowanie=findViewById(R.id.podsumowanie);
+        zus=findViewById(R.id.zus);
+        zatwierdz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String komunikatStr="";
+                String imieStr=imie.getText().toString();
+                if(imieStr.isEmpty()) komunikatStr+="Wprowadz imie.\n";
+                String nazwiskoStr=nazwisko.getText().toString();
+                if(nazwiskoStr.isEmpty()) komunikatStr+="Wprowadz nazwisko.\n";
+                String wiekStr=wiek.getText().toString();
+                if(wiekStr.isEmpty()) komunikatStr+="Wprowadz wiek.\n";
+                String telefonStr=telefon.getText().toString();
+                if(telefonStr.isEmpty()) komunikatStr+="Wprowadz telefon.\n";
+                String emailStr=email.getText().toString();
+                if(emailStr.isEmpty()) komunikatStr+="Wprowadz email.\n";
+                String hasloStr=haslo.getText().toString();
+                if(hasloStr.isEmpty()) komunikatStr+="Wprowadz hasło.\n";
+
+                if (komunikatStr.isEmpty()){
+                    String podsumowanieStr="Twoje dane: \n"+
+                            "Imię: "+imieStr +"\n"+
+                            "Nazwisko: "+nazwiskoStr+"\n"+
+                            "Wiek: "+wiekStr+"\n"+
+                            "Telefon: "+telefonStr+"\n"+
+                            "Email: "+emailStr+"\n"+
+                            "Hasło: "+hasloStr+"\n";
+                    podsumowanie.setText(podsumowanieStr);
+                }
+                else{
+                    podsumowanie.setText(komunikatStr);
+                }
+            }
+        });
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+        zus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String komunikatStr="";
+                String wiekStr=wiek.getText().toString();
+                if (wiekStr.isEmpty()) komunikatStr +="Wypełnij wiek!";
+
+                if (komunikatStr.isEmpty()){
+                    Integer wiekInt=Integer.parseInt(wiekStr);
+                    Integer wynik = 65-wiekInt;
+                    if (wynik<=0) podsumowanie.setText("Jesteś emerytem");
+                    else podsumowanie.setText("Do emerytury zostało Ci "+wynik);
+                }
+            }
+        });
+    }
+
+}
