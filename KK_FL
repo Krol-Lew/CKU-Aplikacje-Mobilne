@@ -1,0 +1,123 @@
+XML:
+
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="360dp"
+    android:layout_gravity="top|center">
+
+    <Button
+        android:id="@+id/p11"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cornerRadius="0dp"
+        android:backgroundTint="#AAAAAA"
+        android:text=""
+        android:layout_margin="@dimen/margin"
+        android:layout_gravity="top|left"
+        />
+    <Button
+        android:id="@+id/p12"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cornerRadius="0dp"
+        android:backgroundTint="#AAAAAA"
+        android:text=""
+        android:layout_margin="@dimen/margin"
+        android:layout_gravity="top|center"
+        />
+    <Button
+        android:id="@+id/p13"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cornerRadius="0dp"
+        android:backgroundTint="#AAAAAA"
+        android:text=""
+        android:layout_margin="@dimen/margin"
+        android:layout_gravity="top|right"
+        />
+    <Button
+        android:id="@+id/p21"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cornerRadius="0dp"
+        android:backgroundTint="#AAAAAA"
+        android:text=""
+        android:layout_margin="@dimen/margin"
+        android:layout_gravity="center|left"
+        />
+    <Button
+        android:id="@+id/p22"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cornerRadius="0dp"
+        android:backgroundTint="#AAAAAA"
+        android:text=""
+        android:layout_margin="@dimen/margin"
+        android:layout_gravity="center"
+        />
+    <Button
+        android:id="@+id/p23"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cornerRadius="0dp"
+        android:backgroundTint="#AAAAAA"
+        android:text=""
+        android:layout_margin="@dimen/margin"
+        android:layout_gravity="center|right"
+        />
+    <Button
+        android:id="@+id/p31"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cornerRadius="0dp"
+        android:backgroundTint="#AAAAAA"
+        android:text=""
+        android:layout_margin="@dimen/margin"
+        android:layout_gravity="bottom|left"
+        />
+    <Button
+        android:id="@+id/p32"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cornerRadius="0dp"
+        android:backgroundTint="#AAAAAA"
+        android:text=""
+        android:layout_margin="@dimen/margin"
+        android:layout_gravity="bottom|center"
+        />
+    <Button
+        android:id="@+id/p33"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cornerRadius="0dp"
+        android:backgroundTint="#AAAAAA"
+        android:text=""
+        android:layout_margin="@dimen/margin"
+        android:layout_gravity="bottom|right"
+        />
+</FrameLayout>
+<TextView
+    android:id="@+id/komunikat"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Teraz gra X"
+    android:layout_gravity="center_vertical|center_horizontal"
+    />
+    <Button
+        android:id="@+id/resetuj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="resetuj"
+        android:layout_gravity="bottom|center"
+        />
+
+</FrameLayout>
