@@ -1,0 +1,310 @@
+XML:
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:layout_gravity="center"
+        android:textSize="@dimen/Tekst_duzy"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margines"
+        android:layout_marginBottom="@dimen/margines">
+        <Button
+            android:id="@+id/p11"
+            android:layout_width="@dimen/bok"
+            android:layout_height="@dimen/bok"
+            app:cornerRadius="0dp"
+            android:backgroundTint="@color/szary"
+            android:layout_marginLeft="@dimen/margines"
+            android:layout_marginRight="@dimen/margines"
+            android:text="@string/pusty"
+            />
+        <Button
+            android:id="@+id/p12"
+            android:layout_width="@dimen/bok"
+            android:layout_height="@dimen/bok"
+            app:cornerRadius="0dp"
+            android:backgroundTint="@color/szary"
+            android:layout_marginLeft="@dimen/margines"
+            android:layout_marginRight="@dimen/margines"
+            android:text="@string/pusty"
+            />
+        <Button
+            android:id="@+id/p13"
+            android:layout_width="@dimen/bok"
+            android:layout_height="@dimen/bok"
+            app:cornerRadius="0dp"
+            android:backgroundTint="@color/szary"
+            android:layout_marginLeft="@dimen/margines"
+            android:layout_marginRight="@dimen/margines"
+            android:text="@string/pusty"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margines"
+        android:layout_marginBottom="@dimen/margines">
+        <Button
+            android:id="@+id/p21"
+            android:layout_width="@dimen/bok"
+            android:layout_height="@dimen/bok"
+            app:cornerRadius="0dp"
+            android:backgroundTint="@color/szary"
+            android:layout_marginLeft="@dimen/margines"
+            android:layout_marginRight="@dimen/margines"
+            android:text="@string/pusty"
+            />
+        <Button
+            android:id="@+id/p22"
+            android:layout_width="@dimen/bok"
+            android:layout_height="@dimen/bok"
+            app:cornerRadius="0dp"
+            android:backgroundTint="@color/szary"
+            android:layout_marginLeft="@dimen/margines"
+            android:layout_marginRight="@dimen/margines"
+            android:text="@string/pusty"
+            />
+        <Button
+            android:id="@+id/p23"
+            android:layout_width="@dimen/bok"
+            android:layout_height="@dimen/bok"
+            app:cornerRadius="0dp"
+            android:backgroundTint="@color/szary"
+            android:layout_marginLeft="@dimen/margines"
+            android:layout_marginRight="@dimen/margines"
+            android:text="@string/pusty"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margines"
+        android:layout_marginBottom="@dimen/margines">
+        <Button
+            android:id="@+id/p31"
+            android:layout_width="@dimen/bok"
+            android:layout_height="@dimen/bok"
+            app:cornerRadius="0dp"
+            android:backgroundTint="@color/szary"
+            android:layout_marginLeft="@dimen/margines"
+            android:layout_marginRight="@dimen/margines"
+            android:text="@string/pusty"
+            />
+        <Button
+            android:id="@+id/p32"
+            android:layout_width="@dimen/bok"
+            android:layout_height="@dimen/bok"
+            app:cornerRadius="0dp"
+            android:backgroundTint="@color/szary"
+            android:layout_marginLeft="@dimen/margines"
+            android:layout_marginRight="@dimen/margines"
+            android:text="@string/pusty"
+            />
+        <Button
+            android:id="@+id/p33"
+            android:layout_width="@dimen/bok"
+            android:layout_height="@dimen/bok"
+            app:cornerRadius="0dp"
+            android:backgroundTint="@color/szary"
+            android:layout_marginLeft="@dimen/margines"
+            android:layout_marginRight="@dimen/margines"
+            android:text="@string/pusty"
+            />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/komunikat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/teraz_gra"
+        android:layout_gravity="center"
+        android:textSize="@dimen/tekst_sredni"
+        android:layout_margin="@dimen/margines"
+        />
+    <Button
+        android:id="@+id/resetuj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resetuj"
+        android:layout_margin="@dimen/margines"
+        android:layout_gravity="center"
+        />
+
+</LinearLayout>
+
+Main JAVA:
+package com.example.kolkokrzyzyk;
+
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class MainActivity extends AppCompatActivity {
+    Button p11,p12,p13,p21,p22,p23,p31,p32,p33,resetuj;
+    TextView komunikat;
+    String znak="X";
+    Integer licznikInt=0;
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+        p11=findViewById(R.id.p11);
+        p12=findViewById(R.id.p12);
+        p13=findViewById(R.id.p13);
+
+        p21=findViewById(R.id.p21);
+        p22=findViewById(R.id.p22);
+        p23=findViewById(R.id.p23);
+
+        p31=findViewById(R.id.p31);
+        p32=findViewById(R.id.p32);
+        p33=findViewById(R.id.p33);
+
+        resetuj=findViewById(R.id.resetuj);
+        komunikat=findViewById(R.id.komunikat);
+
+        //utworzyć jeden słuchacz do wszystkich przycisków
+        View.OnClickListener sluchacz_przyciskow = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button przycisk = (Button) view;
+                przycisk.setTextSize(30);
+                przycisk.setTextColor(Color.rgb(255,0,0));
+                przycisk.setText(znak);
+                przycisk.setEnabled(false);
+                licznikInt++;
+                if(czyWygrana()==true){
+                    komunikat.setText("Wygrywa "+znak);
+                    blokada(false);
+                }
+                else {
+                    if (znak.equals("X")) znak = "O";
+                    else znak = "X";
+                    if (licznikInt==9) komunikat.setText("Remis");
+                    else komunikat.setText("Teraz gra "+znak);
+                }
+
+            }
+        };
+
+        p11.setOnClickListener(sluchacz_przyciskow);
+        p12.setOnClickListener(sluchacz_przyciskow);
+        p13.setOnClickListener(sluchacz_przyciskow);
+
+        p21.setOnClickListener(sluchacz_przyciskow);
+        p22.setOnClickListener(sluchacz_przyciskow);
+        p23.setOnClickListener(sluchacz_przyciskow);
+
+        p31.setOnClickListener(sluchacz_przyciskow);
+        p32.setOnClickListener(sluchacz_przyciskow);
+        p33.setOnClickListener(sluchacz_przyciskow);
+
+        resetuj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                p11.setText("");
+                p12.setText("");
+                p13.setText("");
+
+                p21.setText("");
+                p22.setText("");
+                p23.setText("");
+
+                p31.setText("");
+                p32.setText("");
+                p33.setText("");
+
+                blokada(true);
+                licznikInt=0;
+            }
+        });
+    }
+
+
+    private void blokada(boolean b){
+        p11.setEnabled(b);p12.setEnabled(b);p13.setEnabled(b);
+        p21.setEnabled(b);p22.setEnabled(b);p23.setEnabled(b);
+        p31.setEnabled(b);p32.setEnabled(b);p33.setEnabled(b);
+    }
+    private boolean czyWygrana() {
+        String p11s=p11.getText().toString();
+        String p12s=p12.getText().toString();
+        String p13s=p13.getText().toString();
+
+        String p21s=p21.getText().toString();
+        String p22s=p22.getText().toString();
+        String p23s=p23.getText().toString();
+
+        String p31s=p31.getText().toString();
+        String p32s=p32.getText().toString();
+        String p33s=p33.getText().toString();
+
+        if(
+                        (p11s.equals(p12s) && p11s.equals(p13s) && p11s.length()>0) ||
+                        (p21s.equals(p22s) && p21s.equals(p23s) && p21s.length()>0) ||
+                        (p31s.equals(p32s) && p31s.equals(p33s) && p31s.length()>0) ||
+                        (p11s.equals(p21s) && p11s.equals(p31s) && p11s.length()>0) ||
+                        (p12s.equals(p22s) && p12s.equals(p32s) && p12s.length()>0) ||
+                        (p13s.equals(p23s) && p13s.equals(p33s) && p13s.length()>0) ||
+                        (p11s.equals(p22s) && p11s.equals(p33s) && p11s.length()>0) ||
+                        (p13s.equals(p22s) && p13s.equals(p31s) && p13s.length()>0)
+        ) return true;
+        else return false;
+    }
+}
+
+STRING:
+
+<resources>
+    <string name="app_name">Kółko i Krzyżyk</string>
+    <string name="teraz_gra">Teraz gra X</string>
+    <string name="resetuj">resetuj</string>
+    <string name="pusty" />
+</resources>
+
+DIMS:
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="Tekst_duzy">30sp</dimen>
+    <dimen name="margines">10dp</dimen>
+    <dimen name="bok">110dp</dimen>
+    <dimen name="tekst_sredni">20sp</dimen>
+</resources>
