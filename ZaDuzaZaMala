@@ -13,24 +13,26 @@ XML:
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Za dużo, za mało"
+        android:text="@string/app_name"
         android:textSize="24sp"
         android:layout_gravity="center"
+        android:layout_margin="@dimen/margines_maly"
         />
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/pytanie"
         android:layout_gravity="center"
+        android:layout_margin="@dimen/margines_maly"
         />
     <EditText
         android:id="@+id/zgadywana"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Zgadnij liczbę 1-100"
+        android:hint="@string/zgadnij_liczbe"
         android:gravity="center"
         android:padding="10dp"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/margines_maly"
         android:inputType="number"
         android:imeOptions="actionDone"
         />
@@ -39,17 +41,17 @@ XML:
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Sprawdź"
-        android:layout_margin="7dp"
+        android:text="@string/sprawdz"
+        android:layout_margin="@dimen/margines_maly"
         />
     <TextView
         android:id="@+id/wynik"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tu pojawi się wynik"
+        android:text="@string/tu_pojawi_sie_wynik"
         android:textSize="20sp"
         android:gravity="center"
-        android:layout_margin="7dp"
+        android:layout_margin="@dimen/margines_maly"
         />
 
 </LinearLayout>
@@ -104,14 +106,17 @@ public class MainActivity extends AppCompatActivity {
                 if (komunikat.isEmpty()) {
                     Integer zgadywanaInt = Integer.parseInt(zgadywanaStr);
                     if (zgadywanaInt == losowana) {
-                        wynik.setText(String.format("Brawo, %d to ta liczba!", zgadywanaInt));
+                        //wynik.setText(String.format("Brawo, %d to ta liczba!", zgadywanaInt));
+                        wynik.setText(getString(R.string.dobrze,zgadywanaInt));
                         losowana= (int) (Math.random()*100+1);
                         zgadywana.setText("");
                     } else if (zgadywanaInt < losowana) {
-                        wynik.setText(String.format("%d jest za mała!",zgadywanaInt));
+                        //wynik.setText(String.format("%d jest za mała!",zgadywanaInt));
+                        wynik.setText(getString(R.string.za_malo,zgadywanaInt));
                         zgadywana.setText("");
                     } else {
-                        wynik.setText(String.format("%d jest za duża!",zgadywanaInt));
+                        //wynik.setText(String.format("%d jest za duża!",zgadywanaInt));
+                        wynik.setText(getString(R.string.za_duzo,zgadywanaInt));
                         zgadywana.setText("");
                     }
 
@@ -121,3 +126,21 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+
+STRINGS: 
+
+<resources>
+    <string name="app_name">Too big, Too Small</string>
+    <string name="zgadnij_liczbe">Guess the number 1-100</string>
+    <string name="tu_pojawi_sie_wynik">Here\'s where the result will appear</string>
+    <string name="sprawdz">Check</string>
+    <string name="za_duzo">%d is too big!</string>
+    <string name="za_malo">%d is too small!</string>
+    <string name="dobrze">Hurray, %d is the number!</string>
+</resources>
+
+DIMENS:
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margines_maly">10dp</dimen>
+</resources>
