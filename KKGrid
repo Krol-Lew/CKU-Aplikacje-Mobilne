@@ -1,0 +1,119 @@
+XML:
+
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:columnCount="3">
+
+    <Button
+        android:id="@+id/p11"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cornerRadius="0dp"
+        android:backgroundTint="#AAAAAA"
+        android:layout_margin="7dp"
+        android:text=""
+        />
+    <Button
+        android:id="@+id/p12"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cornerRadius="0dp"
+        android:backgroundTint="#AAAAAA"
+        android:layout_margin="7dp"
+        android:text=""
+        />
+    <Button
+        android:id="@+id/p13"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cornerRadius="0dp"
+        android:backgroundTint="#AAAAAA"
+        android:layout_margin="7dp"
+        android:text=""
+        />
+    <Button
+        android:id="@+id/p21"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cornerRadius="0dp"
+        android:backgroundTint="#AAAAAA"
+        android:layout_margin="7dp"
+        android:text=""
+        />
+    <Button
+        android:id="@+id/p22"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cornerRadius="0dp"
+        android:backgroundTint="#AAAAAA"
+        android:layout_margin="7dp"
+        android:text=""
+        />
+    <Button
+        android:id="@+id/p23"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cornerRadius="0dp"
+        android:backgroundTint="#AAAAAA"
+        android:layout_margin="7dp"
+        android:text=""
+        />
+    <Button
+        android:id="@+id/p31"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cornerRadius="0dp"
+        android:backgroundTint="#AAAAAA"
+        android:layout_margin="7dp"
+        android:text=""
+        />
+    <Button
+        android:id="@+id/p32"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cornerRadius="0dp"
+        android:backgroundTint="#AAAAAA"
+        android:layout_margin="7dp"
+        android:text=""
+        />
+    <Button
+        android:id="@+id/p33"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cornerRadius="0dp"
+        android:backgroundTint="#AAAAAA"
+        android:layout_margin="7dp"
+        android:text=""
+        />
+
+    <TextView
+        android:id="@+id/komunikat"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Teraz gra X"
+        android:textSize="24sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_columnSpan="3"
+        />
+    <Button
+        android:id="@+id/resetuj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resetuj"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_columnSpan="3"
+        />
+
+
+</GridLayout>
+
+Java Main jak w KółkoKrzyżyk
