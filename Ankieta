@@ -1,0 +1,377 @@
+Main xml:
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/etykietaNazwa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ankieta"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <EditText
+        android:id="@+id/imie_nazwisko"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="imię i nazwisko"
+        app:layout_constraintTop_toBottomOf="@id/etykietaNazwa"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <TextView
+        android:id="@+id/etykietaPlec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Płeć"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imie_nazwisko"
+        />
+    <RadioGroup
+        android:id="@+id/plec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/etykietaPlec"
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
+        <RadioButton
+            android:id="@+id/kobieta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="kobieta"
+            />
+        <RadioButton
+            android:id="@+id/mezczyzna"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mężczyzna"
+            />
+    </RadioGroup>
+    <TextView
+        android:id="@+id/etykietaJezyki"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Języki programowania"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/plec"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <CheckBox
+        android:id="@+id/cpp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C++"
+        app:layout_constraintTop_toBottomOf="@id/etykietaJezyki"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <CheckBox
+        android:id="@+id/python"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Python"
+        app:layout_constraintTop_toBottomOf="@id/cpp"
+        app:layout_constraintLeft_toLeftOf="@id/cpp"
+        />
+    <CheckBox
+        android:id="@+id/java"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Java"
+        app:layout_constraintTop_toBottomOf="@id/python"
+        app:layout_constraintLeft_toLeftOf="@id/python"
+        />
+    <CheckBox
+        android:id="@+id/javaScript"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Java Script"
+        app:layout_constraintTop_toBottomOf="@id/java"
+        app:layout_constraintLeft_toLeftOf="@id/java"
+        />
+    <TextView
+        android:id="@+id/etykietaForma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dopuszczalna forma zatrudnienia"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/javaScript"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <Switch
+        android:id="@+id/umowa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Umowa"
+        app:layout_constraintTop_toBottomOf="@id/etykietaForma"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <Switch
+        android:id="@+id/b2b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="B2B"
+        app:layout_constraintTop_toBottomOf="@id/etykietaForma"
+        app:layout_constraintLeft_toRightOf="@id/umowa"
+        />
+    <Switch
+        android:id="@+id/zlecenie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zlecenie"
+        app:layout_constraintTop_toBottomOf="@id/etykietaForma"
+        app:layout_constraintLeft_toRightOf="@id/b2b"
+        />
+
+    <TextView
+        android:id="@+id/etykietaWiek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wiek"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/zlecenie"
+        />
+    <TextView
+        android:id="@+id/pokazWiek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wiek: "
+        app:layout_constraintTop_toBottomOf="@id/etykietaWiek"
+        app:layout_constraintLeft_toLeftOf="@id/umowa"
+        />
+
+    <SeekBar
+        android:id="@+id/wiek"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:min="18"
+        android:max="100"
+        app:layout_constraintLeft_toLeftOf="@id/etykietaWiek"
+        app:layout_constraintTop_toBottomOf="@id/etykietaWiek"
+        />
+    <TextView
+        android:id="@+id/etykietaDoswiadczenie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Doświadczenie zawodowe"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/wiek"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <RatingBar
+        android:id="@+id/doswiadczenie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="0.5"
+        app:layout_constraintTop_toBottomOf="@id/etykietaDoswiadczenie"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <Button
+        android:id="@+id/podsumuj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PODSUMUJ"
+        app:layout_constraintTop_toBottomOf="@id/doswiadczenie"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <TextView
+        android:id="@+id/etykietaPodsumowanie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Podsumowanie"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/podsumuj"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <TextView
+        android:id="@+id/podsumowanie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@id/etykietaPodsumowanie"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+Main Java:
+package com.example.ankieta;
+
+import static android.view.View.INVISIBLE;
+import static android.view.View.VISIBLE;
+
+import android.media.Rating;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.SeekBar;
+import android.widget.Switch;
+import android.widget.TextView;
+import android.widget.RatingBar;
+
+import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class MainActivity extends AppCompatActivity {
+
+    TextView etykietaAnkieta;
+    TextView etykietaPlec;
+    TextView etykietaJezyki;
+    TextView etykietaForma;
+    TextView etykietaWiek;
+    TextView etykietaDoswiadczenie;
+    TextView podsumowanie;
+    TextView pokazWiek;
+    EditText imie_nazwisko;
+    RadioGroup plec;
+    CheckBox cpp,python,java,javaScript;
+    Switch umowa,b2b,zlecenie;
+    RatingBar doswiadczenie;
+    Button podsumuj;
+    SeekBar wiek;
+    String nazwaPlci, nazwaJezyka, nazwaUmowy, wiekStr;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
+        imie_nazwisko=findViewById(R.id.imie_nazwisko);
+        plec=findViewById(R.id.plec);
+        cpp=findViewById(R.id.cpp);
+        python=findViewById(R.id.python);
+        java=findViewById(R.id.java);
+        javaScript=findViewById(R.id.javaScript);
+        umowa=findViewById(R.id.umowa);
+        b2b=findViewById(R.id.b2b);
+        zlecenie=findViewById(R.id.zlecenie);
+        wiek=findViewById(R.id.wiek);
+        doswiadczenie=findViewById(R.id.doswiadczenie);
+        podsumowanie=findViewById(R.id.podsumowanie);
+        podsumuj=findViewById(R.id.podsumuj);
+        pokazWiek=findViewById(R.id.pokazWiek);
+
+        java.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(@NonNull CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    b2b.setVisibility(INVISIBLE);
+                    zlecenie.setVisibility(INVISIBLE);
+                }else{
+                    b2b.setVisibility(VISIBLE);
+                    zlecenie.setVisibility(VISIBLE);
+                }
+            }
+        });
+
+        wiek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                wiekStr=""+wiek.getProgress()+" lat";
+                pokazWiek.setText(wiekStr);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        podsumuj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String podsumowanieStr = "nazwa: "+ imie_nazwisko.getText().toString()+"\n";
+                RadioButton Plec = plec.findViewById(plec.getCheckedRadioButtonId());
+                nazwaPlci=Plec.getText().toString();
+                podsumowanieStr += "płeć: "+nazwaPlci+"\n";
+                if (cpp.isChecked()){
+                    nazwaJezyka+="C++, ";
+                }
+                if (python.isChecked()){
+                    nazwaJezyka+="Python, ";
+                }
+                if (java.isChecked()){
+                    nazwaJezyka+="Java, ";
+                }
+                if (javaScript.isChecked()){
+                    nazwaJezyka+="Java Script";
+                }
+                podsumowanieStr +="Znajomość języków programowania: "+ nazwaJezyka+"\n";
+
+                if(umowa.isChecked()){
+                    nazwaUmowy+="Umowa, ";
+                }
+                if(b2b.isChecked()){
+                    nazwaUmowy+="B2B, ";
+                }
+                if(zlecenie.isChecked()){
+                    nazwaUmowy+="Zlecenie";
+                }
+                podsumowanieStr+="Dopuszczalna forma zatrudnienia: "+nazwaUmowy+"\n";
+
+                wiekStr = wiek.getProgress()+ "lat";
+                podsumowanieStr+="Wiek: "+wiekStr+"\n";
+                podsumowanieStr+="Doświadczenie: "+doswiadczenie.getRating();
+
+                podsumowanie.setText(podsumowanieStr);
+
+
+
+
+
+
+
+
+
+            }
+        });
+
+
+    }
+}
