@@ -1,0 +1,392 @@
+Main xml:
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/etykietaNazwa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kwestionariusz"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:id="@+id/tytul"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="tytuł książki"
+        app:layout_constraintTop_toBottomOf="@id/etykietaNazwa"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <TextView
+        android:id="@+id/etykietaFormat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Format Książki"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tytul"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <RadioGroup
+        android:id="@+id/format"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/etykietaFormat"
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
+        <RadioButton
+            android:id="@+id/drukowana"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Drukowana"
+            />
+        <RadioButton
+            android:id="@+id/eBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="eBook"
+            />
+        <RadioButton
+            android:id="@+id/Audiobook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Audiobook"
+            />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/etykietaRozmiar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rozmiar"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/format"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <TextView
+        android:id="@+id/textRozmiar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/etykietaRozmiar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Rozmiar: "
+        />
+
+    <SeekBar
+        android:id="@+id/suwakRozmiar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:min="10"
+        android:max="10000"
+        android:progress="10"
+        app:layout_constraintTop_toBottomOf="@id/etykietaRozmiar"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/etykietaZawartosc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zawartość"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/suwakRozmiar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <CheckBox
+        android:id="@+id/beletrystyka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Beletrystyka"
+        app:layout_constraintTop_toBottomOf="@id/etykietaZawartosc"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <CheckBox
+        android:id="@+id/naukowa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Naukowa"
+        app:layout_constraintTop_toBottomOf="@id/beletrystyka"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <CheckBox
+        android:id="@+id/publicystyka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Publicystyka"
+        app:layout_constraintTop_toBottomOf="@id/naukowa"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <TextView
+        android:id="@+id/etykietaGatunek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gatunek"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/publicystyka"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <Switch
+        android:id="@+id/kryminal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kryminał"
+        app:layout_constraintTop_toBottomOf="@id/etykietaGatunek"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <Switch
+        android:id="@+id/romans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Romans"
+        app:layout_constraintTop_toBottomOf="@id/etykietaGatunek"
+        app:layout_constraintLeft_toRightOf="@id/kryminal"
+        />
+    <Switch
+        android:id="@+id/fantasy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fantasy"
+        app:layout_constraintTop_toBottomOf="@id/etykietaGatunek"
+        app:layout_constraintLeft_toRightOf="@id/romans"
+        />
+    <Switch
+        android:id="@+id/historia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Historia"
+        app:layout_constraintTop_toBottomOf="@id/etykietaGatunek"
+        app:layout_constraintLeft_toRightOf="@id/fantasy"
+        />
+    <TextView
+        android:id="@+id/etykietaOcena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Twoja Ocena"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/historia"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <RatingBar
+        android:id="@+id/ocena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="0.5"
+        app:layout_constraintTop_toBottomOf="@id/etykietaOcena"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <Button
+        android:id="@+id/podsumuj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PODSUMUJ"
+        app:layout_constraintTop_toBottomOf="@id/ocena"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <TextView
+        android:id="@+id/etykietaPodsumowanie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Podsumowanie"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/podsumuj"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <TextView
+        android:id="@+id/podsumowanie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@id/etykietaPodsumowanie"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+Main Java:
+package com.example.kwestionariusz;
+
+import static android.view.View.INVISIBLE;
+import static android.view.View.VISIBLE;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RatingBar;
+import android.widget.SeekBar;
+import android.widget.Switch;
+import android.widget.TextView;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class MainActivity extends AppCompatActivity {
+
+    TextView etykietaNazwa,etykietaFormat,etykietaRozmiar,etykietaZawartosc, etykietaGatunek,etykietaOcena, etykietaPodsumowanie, textRozmiar, podsumowanie;
+    EditText tytul;
+    RadioGroup format;
+    CheckBox beletrystyka,naukowa,publicystyka;
+    Switch kryminal, romans, fantasy,historia;
+    RatingBar ocena;
+    Button podsumuj;
+    SeekBar suwakRozmiar;
+    String rozmiarStr, formatStr, podsumowanieStr, zawartoscStr, gatunekStr;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+    textRozmiar=findViewById(R.id.textRozmiar);
+    podsumowanie=findViewById(R.id.podsumowanie);
+    tytul=findViewById(R.id.tytul);
+    format=findViewById(R.id.format);
+    beletrystyka=findViewById(R.id.beletrystyka);
+    naukowa=findViewById(R.id.naukowa);
+    publicystyka=findViewById(R.id.publicystyka);
+    kryminal=findViewById(R.id.kryminal);
+    romans=findViewById(R.id.romans);
+    fantasy=findViewById(R.id.fantasy);
+    historia=findViewById(R.id.historia);
+    ocena=findViewById(R.id.ocena);
+    textRozmiar=findViewById(R.id.textRozmiar);
+    podsumuj=findViewById(R.id.podsumuj);
+    podsumowanie=findViewById(R.id.podsumowanie);
+    suwakRozmiar=findViewById(R.id.suwakRozmiar);
+
+        beletrystyka.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                kryminal.setVisibility(VISIBLE);
+                romans.setVisibility(VISIBLE);
+                fantasy.setVisibility(VISIBLE);
+                historia.setVisibility(VISIBLE);
+            } else {
+                kryminal.setVisibility(INVISIBLE);
+                romans.setVisibility(INVISIBLE);
+                fantasy.setVisibility(INVISIBLE);
+                historia.setVisibility(INVISIBLE);
+            }
+        });
+
+
+
+        suwakRozmiar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                rozmiarStr="Rozmiar: "+progress;
+                RadioButton formatKsiazki=format.findViewById(format.getCheckedRadioButtonId());
+                if(formatKsiazki != null) {
+                    formatStr = formatKsiazki.getText().toString();
+                }
+
+                if (formatStr.equals("Drukowana")){
+                    rozmiarStr+=" stron";
+                }
+                else if(formatStr.equals("eBook")) {
+                    rozmiarStr += " stron";
+                }
+                else if (formatStr.equals("Audiobook")){
+                    rozmiarStr += " minut";
+                }
+
+                textRozmiar.setText(rozmiarStr);
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        podsumuj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                podsumowanieStr="Tytul: "+tytul.getText().toString()+"\n";
+                podsumowanieStr+="Format: "+formatStr+"\n";
+                podsumowanieStr+=rozmiarStr+"\n";
+                zawartoscStr="";
+                if(beletrystyka.isChecked()){
+                    zawartoscStr+="beletrystyka";
+                }
+                if(naukowa.isChecked()){
+                    zawartoscStr+=", naukowa";
+                }
+                if(publicystyka.isChecked()){
+                    zawartoscStr+=", publicystyka";
+                }
+                podsumowanieStr+="Zawartość: "+zawartoscStr+"\n";
+                gatunekStr="Gatunek: ";
+                if (kryminal.isChecked()){
+                    gatunekStr+="kryminał";
+                }
+                if (romans.isChecked()){
+                    gatunekStr+=" romans";
+                }
+                if (fantasy.isChecked()){
+                    gatunekStr+=" fantasy";
+                }
+                if (historia.isChecked()){
+                    gatunekStr+=" historia";
+                }
+                podsumowanieStr+=gatunekStr+"\n";
+
+                podsumowanieStr+="Twoja ocena: "+ocena.getRating();
+
+                podsumowanie.setText(podsumowanieStr);
+                }
+
+
+
+
+
+
+        });
+
+
+    }
+}
